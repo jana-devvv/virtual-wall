@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #ffebef;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Container utama */
+.container {
+    max-width: 800px;
+    width: 90%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: #ff9bb2;
+}
+
+/* Area input pesan */
+.input-area {
+    margin-top: 20px;
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+    padding: 10px;
+    border: 2px solid #ff9bb2;
+    border-radius: 10px;
+    outline: none;
+    resize: none;
+    font-family: inherit;
+    background-color: #fff5f7;
+    transition: 0.3s;
+}
+
+textarea:focus {
+    border-color: #ff6b8a;
+    background-color: #ffe5ea;
+}
+
+button {
+    background-color: #ff6b8a;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4571;
+}
+
+/* Wall tempat pesan muncul */
+.wall {
+    margin-top: 40px;
+}
+
+.wall-title {
+    font-size: 1.8rem;
+    color: #ff6b8a;
+    margin-bottom: 20px;
+}
+
+.message-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+/* Container untuk pesan */
+.message-card {
+    background-color: #ffebf0;
+    width: 200px;
+    padding: 15px;
+    margin: 10px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    color: #333;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    word-wrap: break-word;  /* Pastikan teks panjang terbungkus */
+    max-width: 400px; /* Batasi lebar pesan agar lebih rapi */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Modal stiker */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.message-card p {
+    margin-top: 10px; 
+}
+
+.message-card .sticker {
+    display: block;
+    margin: 10px auto 0; 
+    max-width: 80px;    
+    height: auto;         
+}
+
+.sticker-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.sticker-option {
+    width: 100px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.sticker-option:hover {
+    transform: scale(1.1);
+}
+
+
+/* Animasi pesan masuk */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media only screen and (max-width: 600px) {
+    .message-card {
+        max-width: 90%;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .sticker-option {
+        width: 80px;
+    }
+
+    .message-card .sticker {
+        max-width: 60px;
+    }
+}
